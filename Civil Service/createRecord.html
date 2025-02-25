@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Record</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <style>
+        .btn-group {
+            margin-left: 60%;
+        }
+        .form-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .form-box {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #submit {
+            grid-column: span 3;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #submit_btn {
+            font-size: 18px;
+            border-radius: 10px;
+            width: 150px;
+            height: 40px;
+        }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .btn-group {
+            margin-left: 1%;
+            margin-right: 30px;
+        }
+        .grid-container {
+            grid-template-columns: auto auto; /* 2 columns */
+            padding: 100px;
+            grid-gap: 200px;
+            margin-top: 20%;
+            margin-left: 20%;
+        }
+
+        .grid-item {
+            font-size: 40px;
+            padding: 20px;
+        }
+    }
+    @media (max-width: 1024px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            #submit {
+                grid-column: span 1;
+            }
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg p-1">
+        <img src="Image/logo.png" alt="Logo" width="100px">
+        <h1><span style="color: rgb(1, 106, 104)">Civil</span> <span style="color: rgb(60, 232, 255)">Service</span></h1>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" style="background-color: rgb(0, 189, 183); border-radius: 2px;"><a href="home.html" style="text-decoration: none; color: white">Home</a></button>
+            <button type="button" style="background-color: rgb(0, 189, 183); border-radius: 2px;"><a href="retrieveRecord.html" style="text-decoration: none; color: white">Find record</a></button>
+            <button type="button" style="background-color: red; border-radius: 2px;"><a href="index.html" style="text-decoration: none; color: white">Logout</a></button>
+        </div>
+    </nav>
+    <form id="mainForm" method="POST" action="recordData.php">
+        <div class="form-container">
+            <!-- Personal Details Form -->
+            <div class="form-box">
+                <h2><center>Personal Details</center></h2>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName" name="middleName" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" id="nationality" name="nationality" value="Ethiopia" readonly required>
+                </div>
+                <div class="form-group">
+                    <label for="region">Region</label>
+                    <select id="region" name="region" required>
+                        <option value="Tigray">Tigray</option>
+                        <option value="Amhara">Amhara</option>
+                        <option value="Oromo">Oromo</option>
+                        <option value="Sidama">Sidama</option>
+                        <option value="Afar">Afar</option>
+                        <option value="Benshangulgumuz">Benshangulgumuz</option>
+                        <!-- add regions-->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="natoinalId">National Id</label>
+                    <input type="text" id="natoinalId" name="natonalId" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+
+            <!-- Educational and Professional Information Form -->
+            <div class="form-box">
+                <h2><center>Educational and Professional Information</center></h2>
+                <div class="form-group">
+                    <label for="educationalLevel">Educational Level</label>
+                    <select id="educationalLevel" name="educationalLevel" required>
+                        <option value="diploma">Diploma</option>
+                        <option value="degree">Degree</option>
+                        <option value="masters">Masters</option>
+                        <option value="phd">PHD</option>
+                        <option value="doctor">Doctorate</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="certification">Certification</label>
+                    <input type="file" id="certification" name="certification" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeeId">Employee ID</label>
+                    <input type="text" id="employeeId" name="employeeId" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" name="jobTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="employmentStatus">Employment Status</label>
+                    <select id="employmentStatus" name="employmentStatus" required>
+                        <option value="employed">Employed</option>
+                        <option value="unemployed">Unemployed</option>
+                        <option value="pensioner">Pensioner</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateOfJoining">Date of Joining</label>
+                    <input type="date" id="dateOfJoining" name="dateOfJoining" required>
+                </div>
+                <div class="form-group">
+                    <label for="dateOfLeaving">Date of Leaving</label>
+                    <input type="date" id="dateOfLeaving" name="dateOfLeaving">
+                </div>
+                <div class="form-group">
+                    <label for="organizationName">Organization Name</label>
+                    <input type="text" id="organizationName" name="organizationName" required>
+                </div>
+                <div class="form-group">
+                    <label for="workLocation">Work Location</label>
+                    <input type="text" id="workLocation" name="workLocation" required>
+                </div>
+            </div>
+            <!-- Additional Information Form -->
+            <div class="form-box">
+                <h2><center>Additional Information</center></h2><br>
+                <div class="form-group">
+                    <label for="emergencyContactName">Emergency Contact Name</label>
+                    <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="relationship">Emergency Relationship</label>
+                    <input type="text" id="relationship" name="relationship" required>
+                </div>
+                <div class="form-group">
+                    <label for="emergencyPhoneNumber">Emergency Phone Number</label>
+                    <input type="tel" id="emergencyPhoneNumber" name="emergencyPhoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="skillsAndCompetences">Skills and Competences</label>
+                    <textarea id="skillsAndCompetences" name="skills" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="languageSpoken">Language Spoken</label>
+                    <input type="text" id="languageSpoken" name="languages" required>
+                </div>
+                <div class="form-group">
+                    <label for="healthInformation">Health Information</label>
+                    <input type="file" id="healthInformation" name="healthInfo" required>
+                </div>
+                <div class="form-group">
+                    <label for="legalDocumentations">Legal Documentations</label>
+                    <input type="file" id="legalDocumentations" name="legalDocs" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div id="submit">
+                <input type="Submit" id="submit_btn">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

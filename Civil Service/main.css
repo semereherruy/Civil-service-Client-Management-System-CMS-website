@@ -1,0 +1,122 @@
+body{
+    background-image: url('Image/image.jpg');
+    background-size: cover; 
+}
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+.formbox {
+    width: 47%;
+    padding: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.form-group {
+    border-bottom: 2px solid white;
+}
+.form-group > input {
+    border : none;
+    background: none;
+    font-size: 20px;
+    padding: 15px;
+    outline: none;
+}
+p > a {
+    color: rgb(213, 1, 1);
+    text-decoration: none; 
+}
+#submit {
+    padding-top: 40px;
+    margin-left: 30%;
+}
+#submit_btn {
+    font-size: 20px;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    margin-right: 50%;
+}
+/* Media Queries */
+
+/* For screen sizes between 1024px and 768px */
+@media (max-width: 1024px) and (min-width: 769px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .formbox {
+        width: 60%;
+        padding: 80px;
+    }
+
+    .form-group > input {
+        font-size: 18px;
+    }
+
+    #submit {
+        margin-left: 25%;
+    }
+
+    #submit_btn {
+        font-size: 18px;
+        width: 140px;
+        height: 35px;
+    }
+}
+
+/* For screen sizes between 768px and 480px */
+@media (max-width: 768px) and (min-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .formbox {
+        width: 80%;
+        padding: 60px;
+    }
+
+    .form-group > input {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    #submit {
+        margin-left: 20%;
+    }
+
+    #submit_btn {
+        font-size: 16px;
+        width: 130px;
+        height: 30px;
+    }
+}
+
+/* For screen sizes below 480px */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .formbox {
+        width: 90%;
+        padding: 40px;
+    }
+
+    .form-group > input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #submit {
+        margin-left: 15%;
+    }
+
+    #submit_btn {
+        font-size: 14px;
+        width: 120px;
+        height: 25px;
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Login Page</title>
+    <link rel = "stylesheet" href = "main.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg p-1">
+        <img src="Image/logo.png" alt="Logo" width="100px">
+    </nav>
+    <form class="formbox" method = "POST" action = "main.php">
+        <h1>Civil <span style="color: rgb(3, 103, 158)">Service</span></h1>
+        <hr style="color: black; border: solid 2px">
+        <br><br>
+        <div class="form-group">
+            <input type = "text" placeholder = "Username" name = "username" autocomplete="off" autocapitalize="words" required><br>
+        </div>
+        <div class="form-group">
+            <input type = "password" placeholder = "Password" name = "password" autocomplete="off" autocapitalize="words" required><br>
+        </div>
+        <br>
+        <p><a href = "xy.html">I forgot my password</a></p>
+        <br>
+        <div id="submit">
+            <input type = "submit"  value = "Login" id="submit_btn">
+        </div>
+    </form>
+</body>
+</html>
